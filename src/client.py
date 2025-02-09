@@ -16,6 +16,9 @@ def send_message():
                 messagebox.showwarning("Warning", "Message cannot be empty!")
                 return
 
+            # Immediately display sent message in chat historys
+            chat_history.insert(tk.END, f"You: {message}\n", "user_message")
+
             # Try sending message
             try:
                 encrypted_message = encrypt_message(message)  # Encrypt user input
